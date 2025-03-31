@@ -1,0 +1,67 @@
+header, footer {
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  background-color: var(--component-color);
+
+  width: 100%;
+
+  height: 8em;
+  max-height: 8em;
+}
+
+header {
+  border-radius: 0 0 1em 1em;  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  top: 0;
+}
+
+footer {
+  border-radius: 1em 1em 0 0;
+  bottom: 0;
+
+  justify-content: space-around;
+}
+
+footer #links {
+  display: flex;
+  gap: 10px;
+}
+
+#main-container {
+  display: flex;
+  padding: 2em 3em;
+  
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  background-color: var(--main-color);
+  display: flex;
+
+  height: 80%;
+  width: 90%;
+
+  border-radius: 20px;
+}
+
+#output {
+  display: flex;
+  
+  padding: 2em 3em;
+
+  gap: 15px;
+
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}

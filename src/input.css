@@ -1,0 +1,55 @@
+#input-numbers {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 15px;
+  padding: 10px 20px;
+
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#input-numbers div {
+  width: 100%;
+}
+
+.input-container {
+  font-size: 1.25em;
+  position: relative;
+}
+
+.input {
+  all: unset;
+  padding: 1rem;
+  
+  border: 2px solid var(--component-color);
+  border-radius: 10px;
+
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--main-color);
+}
+
+.input:focus {
+  border: 2px solid var(--main-color);
+}
+
+.input:is(:focus, :valid) ~ label {
+  transform: translateY(-120%) scale(0.7);
+  background-color: var(--main-color);
+  padding-inline: 0.3rem;
+}
+
+.label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  pointer-events: none;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#randomize {
+  width: 100%;
+  cursor: pointer;
+}

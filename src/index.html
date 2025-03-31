@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="input.css">
+  <title>Magic randomizer</title>
+</head>
+<body>
+  <div id="root">
+    <header>
+      <h1>
+        Created by FOCKUSTY
+      </h1>
+    </header>
+    
+    <section id="main-container">
+      <main>
+        <div id="input-numbers">
+            <div>
+              <div class="input-container">
+                <input class="input" id="minimal" required type="number" inputmode="numeric">
+                <label class="label" for="minimal">Minimal number</label>
+              </div>
+            </div>
+      
+            <div>
+              <div class="input-container">
+                <input class="input" id="maximal" required type="number" inputmode="numeric">
+                <label class="label" for="maximal">Maximal number</label>
+              </div>
+            </div>
+
+            <div>
+              <button
+                id="randomize"
+                onclick="
+                const min = Number(document.getElementById('minimal')?.value) || 0;
+                const max = Number(document.getElementById('maximal')?.value) || 100;
+                const result = document.getElementById('result');
+
+                const numbers = [
+                  max > min ? max : min,
+                  max > min ? min : max
+                ]
+
+                if (!result || !result.innerText) {
+                  alert('element result is not found, try refresh page');
+                  throw new Error('element result is not found, try refresh page');
+                }
+
+                const random = Math.ceil(Math.random() * (numbers[0] - numbers[1]) + numbers[1]);
+
+                result.innerText = random;
+                "
+              >Randomize</button>
+            </div>
+        </div>
+
+        <div id="output">
+          <h3>Ваш результат:</h3>
+          <h3 id="result">0</h3>
+        </div>
+      </main>
+    </section>
+    
+    <footer>
+      <div>
+        <h2>FOCKUSTY © 2025</h2>
+      </div>
+      
+      <div id="links">
+        <a target="_blank" href="https://t.me/BottomlessHat">Telegram</a>
+        <a target="_blank" href="https://discord.gg/pw8HgBs2yE">Discord</a>
+        <a target="_blank" href="https://github.com/FOCKUSTY">GitHub</a>
+        <a target="_blank" href="https://vk.com/bottomlesshat">VK</a>
+      </div>
+      
+      <h2>The Void</h2>
+    </footer>
+  </div>
+
+  <script src="https://www.npmjs.com/package/random-js"></script>
+</body>
+</html>
